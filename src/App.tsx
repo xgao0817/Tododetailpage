@@ -294,6 +294,15 @@ export default function App() {
     setTodos([newTodo, ...todos]);
   };
 
+  const openUploadModal = (id: string) => {
+    const todo = todos.find(t => t.id === id);
+    if (todo) {
+      setCurrentSmartPostTodoId(id);
+      setCurrentTaskTitle(todo.task);
+      setSmartPostPanelOpen(true);
+    }
+  };
+
   const clearCompleted = () => {
     if (window.confirm('Delete all completed tasks?')) {
       setTodos(todos.filter(todo => !todo.completed));

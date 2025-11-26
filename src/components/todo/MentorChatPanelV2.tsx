@@ -232,6 +232,18 @@ export function MentorChatPanelV2({
                       >
                         <Copy className="w-5 h-5" />
                       </button>
+                      {isSmartPostOpen && (
+                        <button
+                          onClick={() => handleInsert(message.content)}
+                          className="transition-all duration-200 hover:scale-110"
+                          style={{
+                            color: '#7BAFA3',
+                          }}
+                          title="Insert to post"
+                        >
+                          <Plus className="w-5 h-5" />
+                        </button>
+                      )}
                       <button
                         className="transition-all duration-200 hover:scale-110"
                         style={{
@@ -259,18 +271,6 @@ export function MentorChatPanelV2({
                       >
                         <Share2 className="w-5 h-5" />
                       </button>
-                      {isSmartPostOpen && (
-                        <button
-                          onClick={() => handleInsert(message.content)}
-                          className="transition-all duration-200 hover:scale-110"
-                          style={{
-                            color: '#7BAFA3',
-                          }}
-                          title="Insert to post"
-                        >
-                          <Plus className="w-5 h-5" />
-                        </button>
-                      )}
                     </div>
                   </div>
                 </div>
